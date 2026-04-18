@@ -8,7 +8,7 @@ import { StudentsComponent } from './pages/students/students.component';
 import { AddStudentComponent } from './pages/add-student/add-student.component';
 import { StudentDetailsComponent } from './pages/student-details/student-details.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
-// import { NavbarComponent } from './components/navbar/navbar.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 // import { StudentTableComponent } from './components/student-table/student-table.component';
 
 @NgModule({
@@ -18,8 +18,8 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     StudentsComponent,
     AddStudentComponent,
     StudentDetailsComponent,
-    NotFoundComponent
-    // NavbarComponent,
+    NotFoundComponent,
+    NavbarComponent
     // StudentTableComponent
   ],
   imports: [
