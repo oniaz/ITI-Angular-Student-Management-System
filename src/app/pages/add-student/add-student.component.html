@@ -1,2 +1,97 @@
 <p>Add Student Page</p>
-<button class="btn btn-secondary mb-3" (click)="addStudent()">Add</button>
+<button class="btn btn-secondary mb-3" (click)="addStudentGahez()">Add student with data shza</button>
+
+<div class="container mt-4">
+  <div class="card shadow-sm border-0">
+    <div class="card-header bg-primary text-white">
+      <h4 class="mb-0">Add New Student Record</h4>
+    </div>
+    
+    <div class="card-body bg-light">
+      <h6 class="text-muted mb-3">PERSONAL DETAILS</h6>
+      <div class="row g-3 mb-4">
+        <div class="col-md-4">
+          <label class="small fw-bold">First Name</label>
+          <input type="text" #firstName class="form-control" placeholder="e.g. Ali">
+        </div>
+        <div class="col-md-4">
+          <label class="small fw-bold">Last Name</label>
+          <input type="text" #lastName class="form-control" placeholder="e.g. Hassan">
+        </div>
+        <div class="col-md-2">
+          <label class="small fw-bold">Age</label>
+          <input type="number" #age class="form-control">
+        </div>
+        <div class="col-md-2">
+          <label class="small fw-bold">Gender</label>
+          <select #gender class="form-select">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+        </div>
+      </div>
+
+      <h6 class="text-muted mb-3">CONTACT & LOCATION</h6>
+      <div class="row g-3 mb-4">
+        <div class="col-md-6">
+          <label class="small fw-bold">Email</label>
+          <input type="email" #email class="form-control">
+        </div>
+        <div class="col-md-6">
+          <label class="small fw-bold">Phone</label>
+          <input type="text" #phone class="form-control">
+        </div>
+        <div class="col-md-6">
+          <label class="small fw-bold">Address</label>
+          <input type="text" #address class="form-control">
+        </div>
+        <div class="col-md-3">
+          <label class="small fw-bold">City</label>
+          <input type="text" #city class="form-control" value="Cairo">
+        </div>
+        <div class="col-md-3">
+          <label class="small fw-bold">Country</label>
+          <input type="text" #country class="form-control" value="Egypt">
+        </div>
+      </div>
+
+      <h6 class="text-muted mb-3">ACADEMIC INFO</h6>
+      <div class="row g-3 mb-4">
+        <div class="col-md-4">
+          <label class="small fw-bold">Department</label>
+          <input type="text" #department class="form-control" value="Computer Science">
+        </div>
+        <div class="col-md-2">
+          <label class="small fw-bold">Level</label>
+          <input type="number" #level class="form-control" value="1">
+        </div>
+        <div class="col-md-2">
+          <label class="small fw-bold">GPA</label>
+          <input type="number" step="0.1" #GPA class="form-control">
+        </div>
+        <div class="col-md-4">
+          <label class="small fw-bold">Enrollment Date</label>
+          <input type="date" #enrollmentDate class="form-control">
+        </div>
+      </div>
+
+      <div class="form-check form-switch mb-4">
+        <input class="form-check-input" type="checkbox" #isActive id="activeSwitch" checked>
+        <label class="form-check-label" for="activeSwitch">Set as Active Student</label>
+      </div>
+
+      <div class="border-top pt-3">
+        <button class="btn btn-success px-5 me-2" 
+          (click)="addStudent(
+            firstName.value, lastName.value, age.value, gender.value, 
+            email.value, phone.value, address.value, city.value, 
+            country.value, department.value, level.value, GPA.value, 
+            enrollmentDate.value, isActive.checked
+          )">
+          Save Student
+        </button>
+        <button routerLink="/students" class="btn btn-outline-secondary">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
