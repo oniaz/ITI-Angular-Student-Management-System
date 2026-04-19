@@ -10,4 +10,10 @@ import { StudentsService } from '../../services/students.service';
 export class StudentTableComponent {
   constructor(private studentsService: StudentsService) { }
   studentsData$ = this.studentsService.currentData$;
+
+  onDelete(id: number): void {
+    if (confirm('Are you sure you want to delete this student?')) {
+      this.studentsService.deleteStudent(id);
+    }
+  }
 }

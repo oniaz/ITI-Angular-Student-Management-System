@@ -38,9 +38,15 @@
                 <!-- <td>{{ student.enrollmentDate }}</td> -->
                 <!-- <td>{{ student.isActive }}</td> -->
                 <td>
-                    <a [routerLink]="['/student', student.id]" class="btn btn-sm btn-info">
-                        <i class="fas fa-eye"></i> View
-                    </a>
+                    <div class="d-flex gap-2">
+                        <a [routerLink]="['/student', student.id]" class="btn btn-sm btn-success">
+                            <i class="fas fa-eye"></i> View
+                        </a>
+
+                        <button (click)="onDelete(student.id)" class="btn btn-sm btn-danger">
+                            <i class="fas fa-trash-alt"></i> Delete
+                        </button>
+                    </div>
                 </td>
             </tr>
         </tbody>

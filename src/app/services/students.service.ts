@@ -38,7 +38,13 @@ export class StudentsService {
   }
 
   getStudentById(id: number): Student | undefined {
-    // We look into the current value of the BehaviorSubject
     return this.studentsData.value.find(s => s.id === id);
+  }
+
+  deleteStudent(id: number): void {
+    const currentStudents = this.studentsData.value;
+    const updatedStudents = currentStudents.filter(student => student.id !== id);
+    this.studentsData.next(updatedStudents);
+    console.log(`Student ${id} deleted.`);
   }
 }
