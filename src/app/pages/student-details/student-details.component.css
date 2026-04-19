@@ -1,0 +1,123 @@
+
+.student-detail-head {
+	margin-bottom: 1rem;
+}
+
+
+.detail-card {
+	padding: 1.25rem;
+}
+
+
+.detail-section + .detail-section {
+	margin-top: 1.25rem;
+}
+
+
+.detail-heading {
+	margin: 0 0 0.9rem;
+	font-size: 0.8rem;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--text-muted);
+}
+
+
+.detail-grid {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 0.9rem 1rem;
+}
+
+
+.detail-row {
+	padding: 0.9rem 1rem;
+	border: 1px solid var(--line);
+	border-radius: 0.55rem;
+	background: #fff;
+	display: flex;
+	flex-direction: column;
+	gap: 0.3rem;
+}
+
+
+.detail-row-wide {
+	grid-column: 1 / -1;
+}
+
+
+.detail-label {
+	font-size: 0.72rem;
+	font-weight: 700;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	color: var(--text-muted);
+}
+
+
+.detail-value {
+	font-size: 0.98rem;
+	color: var(--text-main);
+	word-break: break-word;
+}
+
+
+.detail-divider {
+	height: 1px;
+	margin: 1.25rem 0;
+	background: var(--line);
+}
+
+
+.status-pill {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0.4rem 0.75rem;
+	border-radius: 999px;
+	font-size: 0.75rem;
+	font-weight: 700;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	border: 1px solid var(--line);
+	background: #fff;
+	color: var(--text-main);
+}
+
+
+.status-pill-active {
+	border-color: var(--accent-success);
+	background: rgba(31, 138, 59, 0.08);
+	color: var(--accent-success);
+}
+
+
+.status-pill-inactive {
+	border-color: var(--line);
+	background: #f5f5f5;
+	color: var(--text-muted);
+}
+
+
+@media (max-width: 767.98px) {
+	.detail-card {
+		padding: 1rem;
+	}
+
+	.detail-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.detail-actions {
+		justify-content: stretch;
+	}
+
+	.detail-actions .btn {
+		width: 100%;
+	}
+
+	.student-detail-head {
+		gap: 0.75rem;
+	}
+}

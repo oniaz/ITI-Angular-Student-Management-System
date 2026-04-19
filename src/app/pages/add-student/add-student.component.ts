@@ -9,28 +9,27 @@ import { Router } from '@angular/router';
   styleUrls: ['./add-student.component.css']
 })
 export class AddStudentComponent {
-  // constructor(private _studentsService: StudentsService) { }
   constructor(private _studentsService: StudentsService, private router: Router) { }
 
   studentsData$ = this._studentsService.currentData$;
 
   newStudent: Student = {
-    id: 2,
-    firstName: "Mariam",
-    lastName: "Zaki",
-    age: 20,
-    gender: "Female",
-    email: "mariam.zaki@email.com",
-    phone: "01200000000",
-    address: "45 Stanley St",
-    city: "Alexandria",
+    id: Math.floor(Math.random() * 10000),
+    firstName: "Ali",
+    lastName: "Hassan",
+    age: 21,
+    gender: "Male",
+    email: "ali.hassan@email.com",
+    phone: "01000000000",
+    address: "12 Main Street",
+    city: "Cairo",
     country: "Egypt",
-    department: "Information Technology",
-    level: 2,
-    GPA: 3.8,
-    enrollmentDate: "2024-09-15",
+    department: "Computer Science",
+    level: 3,
+    GPA: 3.2,
+    enrollmentDate: "2023-09-01",
     isActive: true
-  };
+  }
 
   addStudentGahez() {
     const updated = [...this._studentsService['studentsData'].value, this.newStudent];
@@ -43,9 +42,8 @@ export class AddStudentComponent {
     country: string, department: string, level: string, GPA: string,
     enrollmentDate: string, isActive: boolean
   ) {
-    // Construct the object
     const newStudent = {
-      id: Math.floor(Math.random() * 10000), // Unique ID generator
+      id: Math.floor(Math.random() * 10000),
       firstName,
       lastName,
       age: Number(age),

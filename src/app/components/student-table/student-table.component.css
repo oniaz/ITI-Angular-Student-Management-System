@@ -1,0 +1,10 @@
+.table-responsive {
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid #dee2e6;
+}
+
+.table th,
+.table td {
+  padding: 0.5rem 1.2rem;
+}

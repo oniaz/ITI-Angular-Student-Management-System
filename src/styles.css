@@ -1,1 +1,138 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+	--app-bg: #f7f7f7;
+	--surface: #ffffff;
+	--text-main: #111111;
+	--text-muted: #666666;
+	--line: #d9d9d9;
+	--accent-success: #1f8a3b;
+	--accent-danger: #bf2f2f;
+}
+
+html,
+body {
+	height: 100%;
+}
+
+body {
+	background: linear-gradient(180deg, #fcfcfc 0%, var(--app-bg) 100%);
+	color: var(--text-main);
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.app-shell {
+	min-height: 100vh;
+}
+
+.page-wrap {
+	max-width: 1100px;
+	margin: 0 auto;
+	padding: 2rem 1rem 2.5rem;
+}
+
+.page-head {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+	margin-bottom: 1.25rem;
+}
+
+.page-title {
+	margin: 0;
+	font-size: 1.3rem;
+	font-weight: 600;
+	letter-spacing: 0.01em;
+}
+
+.page-subtitle {
+	margin: 0.4rem 0 0;
+	color: var(--text-muted);
+	font-size: 0.95rem;
+}
+
+.surface-card {
+	background: var(--surface);
+	border: 1px solid var(--line);
+	border-radius: 0.7rem;
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+}
+
+.minimal-divider {
+	border-top: 1px solid #8a8a8a;
+}
+
+hr.minimal-divider {
+	opacity: 1;
+	border-top: 2px solid #737373;
+}
+
+.navbar-minimal {
+	background: #fff;
+	border-bottom: 1px solid var(--line);
+}
+
+.navbar-minimal .navbar-brand {
+	font-size: 0.95rem;
+	font-weight: 700;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+}
+
+.navbar-minimal .nav-link {
+	color: var(--text-main);
+	border-radius: 0.45rem;
+	padding: 0.4rem 0.7rem;
+}
+
+.navbar-minimal .nav-link.active {
+	background-color: #eeeeee;
+	color: #000;
+}
+
+.table-minimal {
+	--bs-table-bg: transparent;
+	--bs-table-striped-bg: #fbfbfb;
+	--bs-table-hover-bg: #f1f1f1;
+	margin-bottom: 0;
+}
+
+.table-minimal thead th {
+	background: #111;
+	color: #fff;
+	font-weight: 600;
+	border-bottom: 0;
+}
+
+.btn-success,
+.btn-outline-success {
+	--bs-btn-bg: var(--accent-success);
+	--bs-btn-border-color: var(--accent-success);
+	--bs-btn-hover-bg: #166a2d;
+	--bs-btn-hover-border-color: #166a2d;
+	--bs-btn-active-bg: #135b27;
+	--bs-btn-active-border-color: #135b27;
+}
+
+.btn-danger,
+.btn-outline-danger {
+	--bs-btn-bg: var(--accent-danger);
+	--bs-btn-border-color: var(--accent-danger);
+	--bs-btn-hover-bg: #9f2525;
+	--bs-btn-hover-border-color: #9f2525;
+	--bs-btn-active-bg: #8a2020;
+	--bs-btn-active-border-color: #8a2020;
+}
+
+.btn,
+.form-control,
+.form-select,
+.form-check-input {
+	border-radius: 0.45rem;
+}
+
+.form-control:focus,
+.form-select:focus,
+.form-check-input:focus {
+	border-color: #333;
+	box-shadow: 0 0 0 0.15rem rgba(0, 0, 0, 0.08);
+}

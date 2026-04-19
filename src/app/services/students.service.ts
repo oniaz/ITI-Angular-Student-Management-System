@@ -11,19 +11,19 @@ export class StudentsService {
     [
       {
         id: 1,
-        firstName: "Ali",
-        lastName: "Hassan",
-        age: 21,
-        gender: "Male",
-        email: "ali.hassan@email.com",
-        phone: "01000000000",
+        firstName: "Omnia",
+        lastName: "Mohamed",
+        age: 25,
+        gender: "Female",
+        email: "omnia@email.com",
+        phone: "01008800000",
         address: "12 Main Street",
-        city: "Cairo",
+        city: "Alexandria",
         country: "Egypt",
         department: "Computer Science",
-        level: 3,
-        GPA: 3.2,
-        enrollmentDate: "2023-09-01",
+        level: 4,
+        GPA: 3.8,
+        enrollmentDate: "2019-09-01",
         isActive: true
       }
     ]
