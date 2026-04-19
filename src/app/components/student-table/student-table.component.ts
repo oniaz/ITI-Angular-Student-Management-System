@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { StudentsService } from '../../services/students.service';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Student } from '../../models/student';
 
 @Component({
   selector: 'app-student-table',
@@ -7,12 +7,17 @@ import { StudentsService } from '../../services/students.service';
   styleUrls: ['./student-table.component.css']
 })
 export class StudentTableComponent {
-  constructor(private _studentsService: StudentsService) { }
-  studentsData$ = this._studentsService.currentData$;
+  @Input() students: Student[] | null = [];
+  @Output() deleteStudent = new EventEmitter<number>();
+  @Output() viewStudent = new EventEmitter<number>();
+
+  constructor() { }
 
   onDelete(id: number): void {
-    if (confirm('Are you sure you want to delete this student?')) {
-      this._studentsService.deleteStudent(id);
-    }
+    this.deleteStudent.emit(id);
+  }
+
+  onView(id: number): void {
+    this.viewStudent.emit(id);
   }
 }

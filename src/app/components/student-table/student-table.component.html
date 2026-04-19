@@ -12,7 +12,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let student of studentsData$ | async">
+            <tr *ngFor="let student of students">
                 <td>{{ student.id }}</td>
                 <td>{{ student.firstName }}</td>
                 <td>{{ student.lastName }}</td>
@@ -21,11 +21,11 @@
                 <td>{{ student.GPA }}</td>
                 <td>
                     <div class="d-flex flex-wrap gap-2">
-                        <a [routerLink]="['/student', student.id]" class="btn btn-sm btn-success">
+                        <button (click)="onView(student.id)" class="btn btn-sm btn-success" type="button">
                             <i class="fas fa-eye"></i> View
-                        </a>
+                        </button>
 
-                        <button (click)="onDelete(student.id)" class="btn btn-sm btn-danger">
+                        <button (click)="onDelete(student.id)" class="btn btn-sm btn-danger" type="button">
                             <i class="fas fa-trash-alt"></i> Delete
                         </button>
                     </div>

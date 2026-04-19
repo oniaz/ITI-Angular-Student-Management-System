@@ -34,6 +34,7 @@ export class AddStudentComponent {
   addStudentGahez() {
     const updated = [...this._studentsService['studentsData'].value, this.newStudent];
     this._studentsService.addStudent(updated);
+        this.router.navigate(['/students']);
   }
 
   addStudent(
