@@ -32,7 +32,7 @@ export class AddStudentComponent {
 
   addStudent() {
     const updated = [...this.studentsService['studentsData'].value, this.newStudent];
-    this.studentsService.updateData(updated);
+    this.studentsService.addStudent(updated);
   }
 
 }

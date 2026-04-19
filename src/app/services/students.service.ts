@@ -32,8 +32,13 @@ export class StudentsService {
 
   constructor() { }
 
-    updateData(newData: Student[]) {
+  addStudent(newData: Student[]) {
     this.studentsData.next(newData);
     console.log("studentsData updated:", this.studentsData.value);
+  }
+
+  getStudentById(id: number): Student | undefined {
+    // We look into the current value of the BehaviorSubject
+    return this.studentsData.value.find(s => s.id === id);
   }
 }

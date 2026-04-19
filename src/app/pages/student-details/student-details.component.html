@@ -1,1 +1,55 @@
-<p>Student Details Page</p>
+<!-- <p>Student Details Page</p> -->
+
+<div class="container mt-4" *ngIf="student; else notFound">
+  <div class="d-flex justify-content-between align-items-end mb-3 border-bottom pb-2">
+    <h2 class="mb-0">{{ student.firstName }} {{ student.lastName }}</h2>
+    <span class="text-muted">Student ID: #{{ student.id }}</span>
+  </div>
+
+  <div class="row g-4">
+    <div class="col-md-6">
+      <div class="border rounded shadow-sm">
+        <div class="bg-light p-2 border-bottom fw-bold text-secondary small">
+          PERSONAL DETAILS
+        </div>
+        <div class="p-3">
+          <div class="mb-2"><i class="fas fa-envelope text-primary me-2"></i> {{ student.email }}</div>
+          <div class="mb-2"><i class="fas fa-phone text-primary me-2"></i> {{ student.phone }}</div>
+          <div class="mb-2"><i class="fas fa-map-marker-alt text-primary me-2"></i> {{ student.address }}, {{ student.city }}</div>
+          <div><i class="fas fa-user text-primary me-2"></i> {{ student.age }} years old ({{ student.gender }})</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="border rounded shadow-sm">
+        <div class="bg-light p-2 border-bottom fw-bold text-secondary small">
+          ACADEMIC INFORMATION
+        </div>
+        <div class="p-3">
+          <div class="mb-2"><i class="fas fa-university text-primary me-2"></i> {{ student.department }}</div>
+          <div class="mb-2"><i class="fas fa-layer-group text-primary me-2"></i> Year {{ student.level }} Student</div>
+          <div class="mb-2"><i class="fas fa-chart-bar text-primary me-2"></i> Current GPA: <strong>{{ student.GPA }}</strong></div>
+          <div>
+            <i class="fas fa-info-circle text-primary me-2"></i> Status: 
+            <span class="badge" [ngClass]="student.isActive ? 'bg-success' : 'bg-danger'">
+              {{ student.isActive ? 'Active' : 'Inactive' }}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-4">
+    <button routerLink="/students" class="btn btn-outline-dark btn-sm">
+      <i class="fas fa-arrow-left me-1"></i> Back to Dashboard
+    </button>
+  </div>
+</div>
+
+<ng-template #notFound>
+  <div class="alert alert-warning mt-5 border-2">
+    <i class="fas fa-search me-2"></i> We couldn't find a record for that ID.
+  </div>
+</ng-template>
