@@ -5,6 +5,9 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:gh": "ng build --base-href /ITI-Angular-Student-Management-System/",
+    "postbuild:gh": "cp dist/student-management-system/index.html dist/student-management-system/404.html",
+    "deploy:gh": "npm run build:gh && npm run postbuild:gh && npx angular-cli-ghpages --dir=dist/student-management-system",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
