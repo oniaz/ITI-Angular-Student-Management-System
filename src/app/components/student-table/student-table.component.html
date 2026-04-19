@@ -6,17 +6,8 @@
                 <th>First Name</th>
                 <th>Last Name</th>
                 <th>Age</th>
-                <!-- <th>Gender</th>
-                <th>Email</th>
-                <th>Phone</th>
-                <th>Address</th>
-                <th>City</th>
-                <th>Country</th> -->
                 <th>Department</th>
-                <!-- <th>Level</th> -->
                 <th>GPA</th>
-                <!-- <th>Enrollment Date</th> -->
-                <!-- <th>Is Active</th> -->
                 <th>Actions</th>
             </tr>
         </thead>
@@ -26,17 +17,8 @@
                 <td>{{ student.firstName }}</td>
                 <td>{{ student.lastName }}</td>
                 <td>{{ student.age }}</td>
-                <!-- <td>{{ student.gender }}</td>
-                <td>{{ student.email }}</td>
-                <td>{{ student.phone }}</td>
-                <td>{{ student.address }}</td>
-                <td>{{ student.city }}</td>
-                <td>{{ student.country }}</td> -->
                 <td>{{ student.department }}</td>
-                <!-- <td>{{ student.level }}</td> -->
                 <td>{{ student.GPA }}</td>
-                <!-- <td>{{ student.enrollmentDate }}</td> -->
-                <!-- <td>{{ student.isActive }}</td> -->
                 <td>
                     <div class="d-flex gap-2">
                         <a [routerLink]="['/student', student.id]" class="btn btn-sm btn-success">

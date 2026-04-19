@@ -13,14 +13,11 @@ export class StudentDetailsComponent {
 
   constructor(
     private route: ActivatedRoute,
-    private studentsService: StudentsService
+    private _studentsService: StudentsService
   ) { }
 
   ngOnInit(): void {
-    // 1. Get the ID from the URL params
     const id = Number(this.route.snapshot.paramMap.get('id'));
-
-    // 2. Fetch that specific student from the service
-    this.student = this.studentsService.getStudentById(id);
+    this.student = this._studentsService.getStudentById(id);
   }
 }

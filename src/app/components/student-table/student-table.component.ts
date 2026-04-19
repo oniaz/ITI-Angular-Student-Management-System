@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-// import { Student } from '../../models/student';
 import { StudentsService } from '../../services/students.service';
 
 @Component({
@@ -8,12 +7,12 @@ import { StudentsService } from '../../services/students.service';
   styleUrls: ['./student-table.component.css']
 })
 export class StudentTableComponent {
-  constructor(private studentsService: StudentsService) { }
-  studentsData$ = this.studentsService.currentData$;
+  constructor(private _studentsService: StudentsService) { }
+  studentsData$ = this._studentsService.currentData$;
 
   onDelete(id: number): void {
     if (confirm('Are you sure you want to delete this student?')) {
-      this.studentsService.deleteStudent(id);
+      this._studentsService.deleteStudent(id);
     }
   }
 }

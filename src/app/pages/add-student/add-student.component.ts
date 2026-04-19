@@ -8,9 +8,9 @@ import { Student } from '../../models/student';
   styleUrls: ['./add-student.component.css']
 })
 export class AddStudentComponent {
-  constructor(private studentsService: StudentsService) { }
+  constructor(private _studentsService: StudentsService) { }
 
-  studentsData$ = this.studentsService.currentData$;
+  studentsData$ = this._studentsService.currentData$;
 
   newStudent: Student = {
     id: 2,
@@ -31,8 +31,8 @@ export class AddStudentComponent {
   };
 
   addStudent() {
-    const updated = [...this.studentsService['studentsData'].value, this.newStudent];
-    this.studentsService.addStudent(updated);
+    const updated = [...this._studentsService['studentsData'].value, this.newStudent];
+    this._studentsService.addStudent(updated);
   }
 
 }
