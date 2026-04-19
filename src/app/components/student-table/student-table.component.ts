@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Student } from '../../models/student';
+// import { Student } from '../../models/student';
+import { StudentsService } from '../../services/students.service';
 
 @Component({
   selector: 'app-student-table',
@@ -7,23 +8,6 @@ import { Student } from '../../models/student';
   styleUrls: ['./student-table.component.css']
 })
 export class StudentTableComponent {
-  students: Student[] = [
-    {
-      id: 1,
-      firstName: "Ali",
-      lastName: "Hassan",
-      age: 21,
-      gender: "Male",
-      email: "ali.hassan@email.com",
-      phone: "01000000000",
-      address: "12 Main Street",
-      city: "Cairo",
-      country: "Egypt",
-      department: "Computer Science",
-      level: 3,
-      GPA: 3.2,
-      enrollmentDate: "2023-09-01",
-      isActive: true
-    }
-  ]
+  constructor(private studentsService: StudentsService) { }
+  studentsData$ = this.studentsService.currentData$;
 }
